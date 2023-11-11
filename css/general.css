@@ -1,0 +1,255 @@
+/* 
+---- Typography System ----
+
+- FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+ -Font weight:
+    default: 400
+    medium: 500
+    semi-bold: 600
+    bold: 700
+
+ -Line Height:
+    default: 1
+    main title: 1.05
+    paragraph: 1.6
+
+    ----- SHADOWS -----
+    0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+---- COLORS ----
+
+- Primary: #e67e22
+
+- Tints (lighter): #fdf2e9, #fae5d3
+
+- Shades (darker):   #170d03, #cf711f, #45260a
+
+- Accents:
+
+- Greys:  #555; #333, #6f6f6f on #fae5d3,
+
+---- TRANSITION TIME ----
+  default: 0.2s
+
+---- BORDER RADIUS ----
+  default: 1rem
+
+---- WHITE SPACES ----
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem #ba651994;
+}
+
+/* Per settare il font-size di 1rem in percentuale per rispettare il formato di default del browser che l'utente ha scelto*/
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+}
+
+/* .test {
+    /* L'elemento avrà la stessa larghezza del suo contenitore fino a 1000px. Se il contenitore aumenta di larghezza, l'elemento rimarrà con larghezza 1000px 
+    max-width: 1000px;
+    background-color: #ac0505;
+    color: #fff;
+    font-size: 2rem;
+    padding: 4rem;
+  } 
+  */
+
+/* Questa è una helper class per inserire dei margini  */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 9.6rem !important;
+}
+.center-text {
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
+}
+/* REUSABLE COMPONENTS */
+
+/* HEADING */
+.primary-title,
+.secondary-title,
+.tertiary-title {
+  font-weight: 700;
+  color: #170d03;
+  letter-spacing: -1px;
+}
+
+.primary-title {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.secondary-title {
+  font-size: 4.4rem;
+  margin-bottom: 9.6rem;
+}
+
+.tertiary-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/**********************/
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2.4rem 4.8rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--action:link,
+.btn--action:visited {
+  background-color: #e67e22;
+  color: white;
+}
+
+.btn--action:hover,
+.btn--action:active {
+  background-color: #cf711f;
+}
+
+.btn--info:link,
+.btn--info:visited {
+  background-color: white;
+  color: #170d03;
+}
+
+.btn--info:hover,
+.btn--info:active {
+  background-color: #fdf2e9;
+  color: #170d03;
+
+  /* Trucco per aggiungere il bordo dentro il box */
+  box-shadow: 0 0 0 3px #fff inset;
+}
+
+/* LINK */
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  padding: 0.2rem;
+  /* currentColor prende il valore della proprietà color che abbiamo specificato */
+  border-bottom: 1px solid currentColor;
+  transition: all 0.2s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  /* Per evitare che sull'hover l'elemento si muova per la scomparsa del bordo, lo si imposta ma con colore trasparente, in modo che l'elemento rimanga fermo. */
+  border-bottom: 1px solid transparent;
+}
+
+/* Helper Class per le griglie */
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid--2-cols {
+  display: grid;
+  gap: 9.6rem 6.4rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  display: grid;
+  gap: 9.6rem 6.4rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  display: grid;
+  gap: 9.6rem 6.4rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  display: grid;
+  gap: 9.6rem 6.4rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-align {
+  align-items: center;
+}
+/*************************/
+
+/* LIST */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  gap: 1.8rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #cf711f;
+}

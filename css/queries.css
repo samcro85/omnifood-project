@@ -1,0 +1,304 @@
+/*
+- Nelle media-query non si devono usare i pixel come un ità di misura.
+- Nelle media query 1rem non corrisponderà a 10px come abbiamo impostato nel css, ma 1rem nelle media query sarà sempre il size di default dei browser, che di solito è 16px.
+- Nelle media query 'rem' ha una sorta di bug quindi si utilizza 'em'.
+- Per calcolare la larghezza in em si fa: larghezza_desiderata / 16
+- Non bisogna aggiungere troppe media query, ma cercare di impostarne una ogni 300px circa
+*/
+
+/******* REUSABLE COMPONENTS *******/
+
+/*  PER SCHERMO DESKTOP FINO a 1344PX*/
+@media (max-width: 84em) {
+  .hero-grid-container {
+    max-width: 120rem;
+  }
+
+  .primary-title {
+    font-size: 4.4rem;
+  }
+
+  /* Rendiamo la griglia delle immagini dei customer a due colonne */
+
+  .testimonial-gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*  PER SCHERMO TABLET IN LANDSCAPE FINO A 1200PX*/
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px  */
+    font-size: 56.25%;
+  }
+
+  .secondary-title {
+    font-size: 3.6rem;
+  }
+
+  .tertiary-title {
+    font-size: 2.4rem;
+  }
+
+  .grid--2-cols {
+    gap: 6.4rem 4.8rem;
+  }
+  .grid--3-cols {
+    gap: 6.4rem 4.8rem;
+  }
+  .grid--4-cols {
+    gap: 6.4rem 4.8rem;
+  }
+  .grid--5-cols {
+    gap: 6.4rem 4.8rem;
+  }
+
+  .header-navigation-list {
+    gap: 3.2rem;
+  }
+
+  .header-hero {
+    padding: 0 3.2rem;
+  }
+
+  .hero-grid-container {
+    gap: 3.6rem;
+  }
+
+  .testimonials-heading-container {
+    padding: 9.6rem 3.2rem;
+  }
+}
+
+/*  PER SCHERMO TABLET IN PORTRAIT FINO A 994PX*/
+
+@media (max-width: 62.2em) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    max-width: 98vw;
+  }
+  .hero-grid-container {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    row-gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .delivered-meals-box {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .hero-image {
+    width: 60%;
+  }
+
+  .featured-logo {
+    height: 2.4rem;
+  }
+
+  .text-box-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-gallery-container {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 0 3.2rem;
+  }
+
+  .plan-card {
+    padding: 2.4rem;
+  }
+
+  .cta-container {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem;
+  }
+
+  /* MOBILE NAVIGATION */
+
+  .main-nav {
+    position: absolute;
+    background-color: hsla(27, 83%, 95%, 0.98);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in;
+    /* Settare display:none , non permette di visualizzare nessuna animazione o transizione */
+
+    /* 1) Nasconderlo alla vista, ma ancora presente nella pagina */
+    opacity: 0;
+
+    /* 2) Renderlo inaccessibile al mouse e tastiera */
+    pointer-events: none;
+
+    /* 3) Nasconderlo dagli screen reader */
+    visibility: hidden;
+
+    transform: translateX(100%);
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    /* Ripristiniamo tutte le funzionalità quando è visibile */
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .header-navigation-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .navigation-link:link,
+  .navigation-link:visited {
+    font-size: 3rem;
+  }
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+}
+
+/* SMALL TABLET FINO A 789PX */
+
+@media (max-width: 49.31em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diet-card {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+
+  .secondary-title {
+    margin-bottom: 4.8rem;
+  }
+
+  .plan-card {
+    width: 100%;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8rem;
+  }
+
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+}
+
+/* SMALL TABLET FINO A 789PX */
+
+@media (max-width: 42.5em) {
+  .featured-logo {
+    height: 2rem;
+  }
+}
+
+/* PHONE FINO A 550PX */
+
+@media (max-width: 34em) {
+  .grid--3-cols,
+  .grid--4-cols,
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+
+  .hero-grid-container {
+    padding: 0 3.2rem;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 4.8rem;
+  }
+
+  .btn {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .featured-logo {
+    height: 1.2rem;
+  }
+
+  .image-box:nth-child(2) {
+    grid-row: 4;
+  }
+
+  .image-box {
+    transform: translateY(-2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-gallery-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cta-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-img-box {
+    height: 30rem;
+    grid-row: 1;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+    color: #45260a;
+  }
+}

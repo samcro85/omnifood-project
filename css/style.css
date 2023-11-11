@@ -1,0 +1,689 @@
+/* HEADER */
+
+.header-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* utilizziamo altezza fissa perche la navbar diventerà sticky */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.header-hero-logo {
+  max-height: 2.2rem;
+}
+/********************/
+
+/* NAVIGATION */
+
+.header-navigation-list {
+  list-style: none;
+  display: flex;
+  gap: 4.8rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-link:link,
+.navigation-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #170d03;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navigation-link:hover,
+.navigation-link:active {
+  color: #cf711f;
+}
+
+.navigation-link.nav-link-cta:link,
+.navigation-link.nav-link-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: #e67e22;
+}
+
+.navigation-link.nav-link-cta:hover,
+.navigation-link.nav-link-cta:active {
+  background-color: #cf711f;
+}
+
+/* Mobile navigation */
+.btn-mobile-nav {
+  border: none;
+  background-color: #fdf2e9;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  font-size: 4.8rem;
+  color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* Sticky navigation */
+
+.sticky-nav .header-hero {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(253, 242, 233, 0.97);
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+  z-index: 10;
+}
+
+.sticky-nav .section-hero {
+  margin-top: 8rem;
+}
+
+/********************/
+
+/* HERO SECTION */
+.section-hero {
+  background-color: #fdf2e9;
+  /* Per creare spazio all'interno preservando il colore dello sfondo si usa sempre il padding */
+  padding: 4.8rem 0 9.6rem;
+}
+
+.hero-grid-container {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  gap: 9.6rem;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.hero-summary {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.delivered-meals-box {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin-top: 8rem;
+}
+
+.delivered-meals-icons {
+  display: flex;
+  align-items: center;
+}
+
+.customer-icon {
+  border-radius: 50%;
+  height: 4.8rem;
+  width: 4.8rem;
+  margin-right: -1.6rem;
+  border: 2px solid #fdf2e9;
+}
+
+.customer-icon:last-child {
+  margin-right: 0;
+}
+
+.delivered-quote > span {
+  color: #cf711f;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.delivered-quote {
+  color: #170d03;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+/*******************/
+
+/* FEATURED IN SECTION */
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.featured-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+}
+
+.feature-logo-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.featured-logo {
+  height: 3.2rem;
+
+  /* Per rendere le immagini tutte nere */
+  filter: brightness(0);
+  /* per sbiadirle e renderle grigie */
+  opacity: 0.5;
+}
+
+/**************************/
+
+/* HOW IT WORKS SECTION */
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.grid-container div {
+  padding: 100px;
+  font-size: 50px;
+}
+
+/************************/
+
+.image-box {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image-box::before,
+.image-box::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-box::before {
+  /* Assume larghezza 60% dell'elemento genitore */
+  width: 60%;
+
+  /* Il padding viene riferito alla larghezza dell'elemento genitore, quindi sarà il 60% della sua larghezza, quindi l'elemento apparirà come un quadrato. */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+  z-index: -2;
+}
+
+.image-box::after {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+  z-index: -1;
+}
+
+.step-img {
+  width: 35%;
+}
+
+.text-box-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #fae5d3;
+  margin-bottom: 1.2rem;
+}
+
+.text-box-description {
+  color: #170d03;
+}
+
+.text-box-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* MEAL SECTION */
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal-card {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 1rem;
+
+  /* Impostando questa proprietà evitiamo che l'immagine sovrapponga i bordi arrotondati del container */
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.meal-card:hover {
+  transform: scale(102%);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.065);
+}
+
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.meal-tags-container {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tag--vegetarian {
+  background-color: #174a21;
+}
+
+.tag--vegan {
+  background-color: #2f9e44;
+}
+
+.tag--paleo {
+  background-color: #5c320e;
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #170d03;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meal-attribute {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-image {
+  width: 100%;
+}
+
+.meal-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #cf711f;
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* TESTIMONIAL SECTION */
+
+.section-testimonials {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+}
+
+.testimonials-heading-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-image {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-quote {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.testimonial-gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+  align-items: center;
+}
+
+figure {
+  /* Per evitare che l'immagine si ingrandisca fuori il suo contenitore impostiamo questa proprietà */
+  overflow: hidden;
+}
+
+.gallery-item img {
+  /* Impostando questa proprietà si tolgono gli spazi bianchi attorno alle immagini */
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+/* ASIDE */
+
+.plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* PRICING SECTION */
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+.plan-card {
+  border-radius: 1rem;
+  padding: 4.8rem;
+  width: 75%;
+  justify-self: end;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.065);
+  transition: all 0.2s;
+}
+
+.plan-card:hover {
+  transform: scale(1.1);
+}
+
+.plan-card:last-child {
+  background-color: #fdf2e9;
+  justify-self: start;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card:last-child::after {
+  content: "Best value";
+  display: block;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  top: 6%;
+  right: -14%;
+  padding: 0.8rem 6.4rem;
+  background-color: #ffd43d;
+  transform: rotate(45deg);
+}
+
+.plan-name {
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75;
+  margin-bottom: 3.2rem;
+}
+
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #170d03;
+  margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+
+.sign-up {
+  margin-top: 4.8rem;
+}
+
+/* FEATURE */
+
+.feature-icon {
+  color: #cf711f;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 3.2rem;
+  background-color: #fae5d3;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+
+.feature-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #170d03;
+  margin-bottom: 1.6rem;
+}
+
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* SECTION CTA */
+
+.section-cta {
+  padding: 4.8rem 0 12.8rem 0;
+}
+
+.cta-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-image: linear-gradient(to right bottom, #e67e22, #eb984e);
+  background-color: #e67e22;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #45260a;
+}
+
+.cta-text-box .secondary-title {
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.3),
+      rgba(230, 125, 34, 0.3)
+    ),
+    url("../img/eating.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+
+  /* Questa proprietà serve a forzare l'eredità del font-face del body, perche di default questi selettori non ereditano */
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 1rem;
+  background-color: #fdf2e9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+.form-select {
+  color: inherit;
+}
+
+.select-option {
+  color: inherit;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: white;
+  color: #aaa;
+}
+
+.section-cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 252, 233, 0.5);
+}
+
+/* SECTION FOOTER */
+
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+
+.grid--footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  gap: 8rem;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+.footer-logo {
+  display: block;
+  width: 100%;
+  margin-bottom: 3.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.footer-contacts {
+  font-style: inherit;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #767676;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}
+
+.footer-icon {
+  font-size: 2.4rem;
+}
+
+.copyright-text {
+  font-size: 1.4rem;
+  color: #767676;
+  line-height: 1.6;
+
+  /* Per spingere l'elemento tutto verso il basso */
+  margin-top: auto;
+}
